@@ -56,6 +56,7 @@ class Home(_, ui,):
         self.Handle_Buttons()
         self.setWindowTitle("Nigerian Defence Academy Attendance System")
         self.show()
+        self.tabWidget.tabBar().setVisible(False)
         # self.getCourses()
         # self.handle_UI_Changes()
 
@@ -66,6 +67,7 @@ class Home(_, ui,):
         self.pushButton_7.clicked.connect(self.Add_New_User_Button)
         self.pushButton_8.clicked.connect(self.Add_Crime_Button)
         self.pushButton_3.clicked.connect(self.Search_User)
+        self.pushButton_6.clicked.connect(self.Add_A_Crime_Tab)
 
     def Add_A_Crime_Tab(self):
         self.tabWidget.setCurrentIndex(2)
@@ -152,7 +154,7 @@ class Home(_, ui,):
             mylabel = QLabel()
             mylabel.setText("Fullname: "+str(fulldata[0][1]))
             mylabel.setObjectName('mylabel')
-            mylabel.setStyleSheet('QLabel#mylabel { color:blue; background-color:transparent; font-size:18px; max-width:360px }')
+            # mylabel.setStyleSheet('QLabel#mylabel { color:blue; background-color:transparent; font-size:18px; max-width:360px }')
 
             mylabel2 = QLabel()
             mylabel2.setText("NDA Number: "+str(fulldata[0][2]))
