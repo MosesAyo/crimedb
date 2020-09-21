@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>725</width>
-    <height>599</height>
+    <height>669</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -44,6 +44,46 @@
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_2">
               <item alignment="Qt::AlignHCenter">
+               <widget class="QPushButton" name="pushButton">
+                <property name="styleSheet">
+                 <string notr="true">height:100px;min-width:100;</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="icon">
+                 <iconset>
+                  <normaloff>../../.designer/backup/images/nda-logo.png</normaloff>../../.designer/backup/images/nda-logo.png</iconset>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>100</width>
+                  <height>100</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+              <item alignment="Qt::AlignHCenter">
+               <widget class="QPushButton" name="pushButton_11">
+                <property name="styleSheet">
+                 <string notr="true">height:100;min-width:100;</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="icon">
+                 <iconset>
+                  <normaloff>images/nda-logo.png</normaloff>images/nda-logo.png</iconset>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>100</width>
+                  <height>100</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+              <item alignment="Qt::AlignHCenter">
                <widget class="QLabel" name="label_11">
                 <property name="styleSheet">
                  <string notr="true">font-size:18px</string>
@@ -68,7 +108,7 @@
                     <string notr="true">min-width: 350px; min-height:40px;border-radius:10px;border:1px solid grey;padding-left:20px;padding-right:10px;font-size:15px;color:grey;</string>
                    </property>
                    <property name="text">
-                    <string/>
+                    <string>NDA Number</string>
                    </property>
                   </widget>
                  </item>
@@ -151,7 +191,7 @@
               <string notr="true">border:nne</string>
              </property>
              <property name="title">
-              <string>GroupBox</string>
+              <string/>
              </property>
              <property name="flat">
               <bool>false</bool>
@@ -170,9 +210,32 @@
                <number>9</number>
               </property>
               <item>
+               <widget class="QPushButton" name="pushButton_2">
+                <property name="styleSheet">
+                 <string notr="true">height:60;min-width:60</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="icon">
+                 <iconset>
+                  <normaloff>images/nda-logo.png</normaloff>images/nda-logo.png</iconset>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>60</width>
+                  <height>60</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+              <item>
                <widget class="QLineEdit" name="lineEdit_3">
                 <property name="styleSheet">
-                 <string notr="true">min-height:40;min-width:300;border-radius:10px;border:1px solid grey;</string>
+                 <string notr="true">min-height:40;min-width:300;border-radius:10px;border:1px solid grey;padding-left:20px;padding-right:20px;</string>
+                </property>
+                <property name="text">
+                 <string/>
                 </property>
                </widget>
               </item>
@@ -272,6 +335,26 @@
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_6">
               <item alignment="Qt::AlignHCenter">
+               <widget class="QPushButton" name="pushButton_12">
+                <property name="styleSheet">
+                 <string notr="true">height:100;min-width:100;</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="icon">
+                 <iconset>
+                  <normaloff>images/nda-logo.png</normaloff>images/nda-logo.png</iconset>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>100</width>
+                  <height>100</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+              <item alignment="Qt::AlignHCenter">
                <widget class="QLabel" name="label_2">
                 <property name="styleSheet">
                  <string notr="true">font-size:18px; font-weight:500;</string>
@@ -343,9 +426,16 @@
             </widget>
            </item>
            <item>
+            <widget class="QLabel" name="label_5">
+             <property name="text">
+              <string>Full Name</string>
+             </property>
+            </widget>
+           </item>
+           <item>
             <widget class="QLineEdit" name="fullname">
              <property name="styleSheet">
-              <string notr="true">border:1px solid grey;min-width:350;min-height:40;border-radius:20;padding-left:20px;padd-right:20px;color:grey;</string>
+              <string notr="true">border:1px solid grey;min-width:350;min-height:30;border-radius:10;padding-left:20px;padding-right:20px;color:grey;</string>
              </property>
              <property name="text">
               <string>Full Name</string>
@@ -353,9 +443,16 @@
             </widget>
            </item>
            <item>
+            <widget class="QLabel" name="label_6">
+             <property name="text">
+              <string>NDA Number</string>
+             </property>
+            </widget>
+           </item>
+           <item>
             <widget class="QLineEdit" name="ndanumber">
              <property name="styleSheet">
-              <string notr="true">border:1px solid grey;min-width:350;min-height:40;border-radius:20;padding-left:20px;padd-right:20px;color:grey;</string>
+              <string notr="true">border:1px solid grey;min-width:350;min-height:30;border-radius:10;padding-left:20px;padding-right:20px;color:grey;</string>
              </property>
              <property name="text">
               <string>NDA Number</string>
@@ -363,9 +460,16 @@
             </widget>
            </item>
            <item>
+            <widget class="QLabel" name="label_7">
+             <property name="text">
+              <string>Department</string>
+             </property>
+            </widget>
+           </item>
+           <item>
             <widget class="QLineEdit" name="department">
              <property name="styleSheet">
-              <string notr="true">border:1px solid grey;min-width:350;min-height:40;border-radius:20;padding-left:20px;padd-right:20px;color:grey;</string>
+              <string notr="true">border:1px solid grey;min-width:350;min-height:30;border-radius:10;padding-left:20px;padding-right:20px;color:grey;</string>
              </property>
              <property name="text">
               <string>Department</string>
@@ -373,9 +477,16 @@
             </widget>
            </item>
            <item>
+            <widget class="QLabel" name="label_8">
+             <property name="text">
+              <string>State</string>
+             </property>
+            </widget>
+           </item>
+           <item>
             <widget class="QLineEdit" name="state">
              <property name="styleSheet">
-              <string notr="true">border:1px solid grey;min-width:350;min-height:40;border-radius:20;padding-left:20px;padd-right:20px;color:grey;</string>
+              <string notr="true">border:1px solid grey;min-width:350;min-height:30;border-radius:10;padding-left:20px;padding-right:20px;color:grey;</string>
              </property>
              <property name="text">
               <string>State</string>
@@ -383,9 +494,16 @@
             </widget>
            </item>
            <item>
+            <widget class="QLabel" name="label_9">
+             <property name="text">
+              <string>Date of Birth</string>
+             </property>
+            </widget>
+           </item>
+           <item>
             <widget class="QLineEdit" name="dateofbirth">
              <property name="styleSheet">
-              <string notr="true">border:1px solid grey;min-width:350;min-height:40;border-radius:20;padding-left:20px;padd-right:20px;color:grey;</string>
+              <string notr="true">border:1px solid grey;min-width:350;min-height:30;border-radius:10;padding-left:20px;padding-right:20px;color:grey;</string>
              </property>
              <property name="text">
               <string>Date Of Birth</string>
@@ -393,9 +511,16 @@
             </widget>
            </item>
            <item>
+            <widget class="QLabel" name="label_10">
+             <property name="text">
+              <string>Sex</string>
+             </property>
+            </widget>
+           </item>
+           <item>
             <widget class="QLineEdit" name="sex">
              <property name="styleSheet">
-              <string notr="true">border:1px solid grey;min-width:350;min-height:40;border-radius:20;padding-left:20px;padd-right:20px;color:grey;</string>
+              <string notr="true">border:1px solid grey;min-width:350;min-height:30;border-radius:10;padding-left:20px;padding-right:20px;color:grey;</string>
              </property>
              <property name="text">
               <string>Sex</string>
@@ -403,9 +528,16 @@
             </widget>
            </item>
            <item>
+            <widget class="QLabel" name="label_12">
+             <property name="text">
+              <string>Battalion</string>
+             </property>
+            </widget>
+           </item>
+           <item>
             <widget class="QLineEdit" name="battalion">
              <property name="styleSheet">
-              <string notr="true">border:1px solid grey;min-width:350;min-height:40;border-radius:20;padding-left:20px;padd-right:20px;color:grey;</string>
+              <string notr="true">border:1px solid grey;min-width:350;min-height:30;border-radius:10;padding-left:20px;padding-right:20px;color:grey;</string>
              </property>
              <property name="text">
               <string>Battalion</string>
@@ -413,9 +545,16 @@
             </widget>
            </item>
            <item>
+            <widget class="QLabel" name="label_13">
+             <property name="text">
+              <string>Crime Description</string>
+             </property>
+            </widget>
+           </item>
+           <item>
             <widget class="QLineEdit" name="description">
              <property name="styleSheet">
-              <string notr="true">border:1px solid grey;min-width:350;min-height:40;border-radius:20;padding-left:20px;padd-right:20px;color:grey;</string>
+              <string notr="true">border:1px solid grey;min-width:350;min-height:30;border-radius:10;padding-left:20px;padding-right:20px;color:grey;</string>
              </property>
              <property name="text">
               <string>Crime Description</string>
@@ -461,6 +600,26 @@
            <string/>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_7">
+           <item alignment="Qt::AlignHCenter">
+            <widget class="QPushButton" name="pushButton_9">
+             <property name="styleSheet">
+              <string notr="true">height:100;min-width:100</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="icon">
+              <iconset>
+               <normaloff>images/nda-logo.png</normaloff>images/nda-logo.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>100</width>
+               <height>100</height>
+              </size>
+             </property>
+            </widget>
+           </item>
            <item alignment="Qt::AlignHCenter">
             <widget class="QLabel" name="label_3">
              <property name="styleSheet">
