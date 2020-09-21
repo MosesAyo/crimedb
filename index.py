@@ -6,12 +6,14 @@ import sqlite3
 import os
 from datetime import datetime
 from PyQt5.uic import loadUiType
+from PIL import Image
 
 # coursesUi,course_iu = loadUiType('courses.ui')
 loginUi, onboarding = loadUiType('Login.ui')
 ui,_ = loadUiType('Main.ui')
 con = sqlite3.connect("database.db")
 cur = con.cursor()
+defaultImg = "user.png"
 
 
 
@@ -68,11 +70,22 @@ class Home(_, ui,):
         self.pushButton_8.clicked.connect(self.Add_Crime_Button)
         self.pushButton_3.clicked.connect(self.Search_User)
         self.pushButton_6.clicked.connect(self.Add_A_Crime_Tab)
+        self.imageBotton.clicked.connect(self.UploadImage)
 
     def Add_A_Crime_Tab(self):
         self.tabWidget.setCurrentIndex(2)
         # print(self.listWidget.count ())     
         pass
+
+    def UploadImage(self):
+        global defaultImg
+        size =(128,128)
+        self.fileName,ok = QFileDialog.getOpenFileName(self, 'Upload Image', '', 'Image Files (*.jpg *.png)')
+        if ok:
+            defaultImg = os.path.basename(self.fileName)
+            img=Image.open(self.fileName)
+            img=img.resize(size)
+            img.save("images/{}".format(defaultImg))
 
     def Add_A_New_User_Tab(self):
         global searched_id
@@ -93,22 +106,31 @@ class Home(_, ui,):
             print("Create a new user")
     
     def Add_New_User_Button(self):
+        global defaultImg
         cursorr = con.cursor()
         cursorrs = con.cursor()
         name=self.fullname.text()
         ndaNumber=self.ndanumber.text().upper()
         department=self.department.text()
+        dateofbirth=self.dateofbirth.text()
+        sex=self.sex.text()
+        battalion=self.battalion.text()
         state=self.state.text()
         crimeDescription=self.description.text()
-        query ="INSERT INTO cardets (name, ndaNumber, department, state, crimeDescription) VALUES(?,?,?,?,?)"
-        query2 ="INSERT INTO crime (ndaNumber, description, date) VALUES(?,?,?)"
-        cursorr.execute(query,(name,ndaNumber,department,state,crimeDescription))
-        cursorrs.execute(query2,(ndaNumber,crimeDescription, datetime.now()))
-        con.commit()
-        cursorr.close()
-        cursorrs.close()
-        self.tabWidget.setCurrentIndex(0)
-        QMessageBox.information(self,"Success","Student has been added")
+        img = defaultImg
+        try:
+            query ="INSERT INTO cardets (name, ndaNumber, department, state, dateOfBirth, sex, battalion, crimeDescription,image) VALUES(?,?,?,?,?,?,?,?,?)"
+            query2 ="INSERT INTO crime (ndaNumber, description, date) VALUES(?,?,?)"
+            cursorr.execute(query,(name,ndaNumber,department,state,dateofbirth,sex,battalion,crimeDescription,img))
+            cursorrs.execute(query2,(ndaNumber,crimeDescription, datetime.now()))
+            con.commit()
+            cursorr.close()
+            cursorrs.close()
+            self.tabWidget.setCurrentIndex(0)
+            QMessageBox.information(self,"Success","Student has been added")
+        except Exception as e:
+            print(e)
+            QMessageBox.information(self,"Warning","Student has not been added")
 
     def Add_Crime_Button(self):
         global searched_id
@@ -122,6 +144,8 @@ class Home(_, ui,):
         QMessageBox.information(self,"Success","Crime have been registered successfully")
     
     def Search_User(self):
+        self.lineEdit_2.setPlaceholderText('Placeholder Text')
+        self.lineEdit_2.setFocus()
         searchQuery = self.lineEdit_2.text().upper()
         cursorr = con.cursor()
         cursorr.execute("SELECT ndaNumber FROM cardets")
@@ -150,6 +174,8 @@ class Home(_, ui,):
 
             veebox = QVBoxLayout()
             self.groupBox_7.setLayout(veebox)
+            img = QLabel()
+            img.setPixmap(QPixmap("images/"+str(fulldata[0][9])))
             
             mylabel = QLabel()
             mylabel.setText("Fullname: "+str(fulldata[0][1]))
@@ -196,6 +222,7 @@ class Home(_, ui,):
             # mylabel.setObjectName('Gender')
             # mylabel.setStyleSheet('QLabel#mylabel { color:blue; background-color:transparent; font-size:18px; max-width:360px }')
 
+            veebox.addWidget(img)
             veebox.addWidget(mylabel)
             veebox.addWidget(mylabel2)
             veebox.addWidget(mylabel3)

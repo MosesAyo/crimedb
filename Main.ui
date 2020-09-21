@@ -68,7 +68,7 @@
                     <string notr="true">min-width: 350px; min-height:40px;border-radius:10px;border:1px solid grey;padding-left:20px;padding-right:10px;font-size:15px;color:grey;</string>
                    </property>
                    <property name="text">
-                    <string>NDA Number</string>
+                    <string/>
                    </property>
                   </widget>
                  </item>
@@ -423,7 +423,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QPushButton" name="pushButton">
+            <widget class="QPushButton" name="imageBotton">
              <property name="styleSheet">
               <string notr="true">min-width:350;min-height:40;background-color:grey;color:white;border-radius:15</string>
              </property>
